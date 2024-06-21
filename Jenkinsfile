@@ -1,17 +1,16 @@
 pipeline {
-    agent any
+    agent {label 'java'}
 
     stages {
-        stage('clone') {
+        stage('clone the') {
             steps {
-             git branch: 'main', url: 'https://github.com/learnaws288/springboot-app-b17.git'   
+                git branch: 'main', url: 'https://github.com/gowdas-pruthvi/springboot-app-b17.git'
             }
         }
-         stage('build') {
-            steps {
-             sh 'mvn clean package'   
+        stage('build') {
+             steps {
+                sh 'mvn clean package'
             }
         }
-        
     }
 }
